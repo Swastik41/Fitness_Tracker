@@ -95,7 +95,7 @@ _**jQuery**_ – For interactive animations.
 
 _**CSS Flexbox & Grid**_ – For layout responsiveness.
 
-**Local Storage – Saves theme preferences.**
+_**Local Storage**_ – Saves theme preferences.
 
 
 **🚧 Future Enhancements:**
