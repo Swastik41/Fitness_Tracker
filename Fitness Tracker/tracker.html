@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Theme Toggle Slider -->
+    <label class="theme-toggle-container">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+    </label>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Track Your Health</h1>
+
+    <div>
+        <h2>BMI Calculator</h2>
+        <input type="number" id="weight" placeholder="Weight (kg)">
+        <input type="number" id="height" placeholder="Height (m)">
+        <button id="calculateBMI">Calculate</button>
+        <p id="bmiResult"></p>
+    </div>
+
+    <div>
+        <h2>BPM Calculate</h2>
+        <input type="number" id="age" placeholder="age">
+        <input type="number" id="restingHR" placeholder="resting heart rate">
+        <button id="calculateBPM">Calculate</button>
+        <p id="bpmResult"></p>
+    </div>
+
+    <div>
+        <h2>Calories Burned</h2>
+        <input type="number" id="weight1" placeholder="Weight (kg)">
+        <input type="number" id="duration" placeholder="Duration (minutes)">
+        <button id="calculateCalories">Calculate</button>
+        <p id="caloriesResult"></p>
+    </div>
+
+    <div>
+        <h2>Step Counter</h2>
+        <p id="stepCountResult"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Fitness Tracker | All Rights Reserved</p>
+    </footer>
+
+    <script src="js/themeToggle.js"></script>
+    <script src="js/fitnessLibrary.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

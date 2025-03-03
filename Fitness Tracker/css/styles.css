@@ -1,0 +1,566 @@
+/* =================== Light/Dark Theme Support =================== */
+:root {
+    --primary-color: #0fcf98;
+    --secondary-color: #121212;
+    --text-color: #ffffff;
+    --accent-color: #ff9800;
+    --light-gray: #ccc;
+    --font-main: 'Poppins', sans-serif;
+    --hover-color: #0fcf98;
+}
+
+.light-theme {
+    --primary-color: #007bff;
+    --secondary-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: #ff5722;
+    --light-gray: #333;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    transition: all 0.3s ease-in-out;
+    margin: 0;
+    padding: 0;
+}
+
+/* Position the theme toggle slider at the top right */
+.theme-toggle-container {
+    position: fixed;
+    /* Fixed position */
+    top: 20px;
+    /* Space from the top */
+    right: 20px;
+    /* Space from the right */
+    z-index: 100;
+    /* Make sure it's above other elements */
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide the checkbox input */
+.theme-toggle-container input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider styles */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+/* The circle inside the slider */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+/* When the checkbox is checked, move the slider circle */
+input:checked+.slider {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, move the circle */
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+
+/* Header Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    padding: 25px 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: var(--accent-color);
+}
+
+/* Landing Page Styling */
+.landing-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.landing-content {
+    max-width: 50%;
+}
+
+.landing-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.landing-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Styling for Landing Image */
+#landing-image {
+    max-width: 50%;
+    text-align: center;
+}
+
+#landing-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Features Section */
+.features-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background-color: var(--accent-color);
+}
+
+.feature-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.benefits-section h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.benefits {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.benefit-card {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    color: var(--text-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background-color: var(--accent-color);
+}
+
+.benefit-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#theme-toggle:hover {
+    background: var(--accent-color);
+}
+
+/* =================== Image Gallery Styling =================== */
+/* Gallery Container */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Gallery Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 15px;
+    /* Space between images */
+    max-width: 900px;
+    /* Prevents stretching on larger screens */
+    width: 100%;
+    margin: 0 auto;
+    border: var(--primary-color) 2px solid;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Gallery Item */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Image Styling */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Caption Styling */
+.gallery-item p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: var(--accent-color);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 23px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Show Caption on Hover */
+.gallery-item:hover p {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 column on mobile */
+    }
+}
+
+/* Contact Page Styles */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 40px;
+    color: var(--primary-color);
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-color: var(--light-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-container.dark-theme {
+    background-color: var(--dark-background);
+    box-shadow: 0 4px 15px rgba(246, 3, 3, 0.1);
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: left;
+}
+
+input,
+textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--input-background);
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+input.dark-theme,
+textarea.dark-theme {
+    background-color: var(--dark-input-background);
+    color: var(--dark-text);
+    border-color: var(--dark-border-color);
+}
+
+input.dark-theme:focus,
+textarea.dark-theme:focus {
+    border-color: var(--focus-border-color);
+}
+
+button[type="submit"] {
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+#contactResponse {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .contact-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Styles for Tracker Page */
+h1 {
+    font-family: var(--font-main);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Styles for headings in dark theme */
+body.dark-theme h1 {
+    color: var(--text-color);
+}
+
+/* Styles for headings in light theme */
+body.light-theme h1 {
+    color: var(--primary-color);
+}
+
+/* Section styles for Tracker page */
+div {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    font-family: var(--font-main);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+}
+
+input[type="number"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+    font-size: 1rem;
+    border: 2px solid var(--light-gray);
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Result texts */
+p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    position: relative;
+    bottom: 0;
+}
